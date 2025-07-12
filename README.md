@@ -3,7 +3,7 @@ discord server: https://discord.gg/UHxdAAYT (for troubleshooting, suggestions, p
 
 
 notes:
-NOTE: This is currently an experimental build, theres next to no testing at this time, performance impacts of each preset is a mystery to me at this point in time
+NOTE: This is currently an experimental build, theres next to no testing at this time, performance impacts of some presets arent clear, and the presets require more refinment
 
 installation:
 copy the engine.ini(and Scalability.ini) here %localAppdata%\FactoryGame\saved\config\Windows and overwrite the vanilla files with the same names
