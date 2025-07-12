@@ -1,5 +1,7 @@
 mod features: Lumen GI/reflection improvements, Virtual shadow maps support, FSR SSR bug fix, 6 presets, research file with all my findings
 discord server: https://discord.gg/UHxdAAYT (for troubleshooting, suggestions, pretty much anything)
+
+
 notes:
 NOTE: This is currently an experimental build, theres next to no testing at this time, performance impacts of each preset is a mystery to me at this point in time
 
