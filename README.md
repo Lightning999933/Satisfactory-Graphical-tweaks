@@ -19,7 +19,11 @@ you can do whatever you want with the rest of the settings
 changelog:
 Update v0.5.1 Experimental
 changelog:
+
 changed r.Shadow.RadiusThreshold value in standard + VSM preset from 0.2 to 0.1, changed its value in high, medium + VSM preset from 0.2 to 0.07
+
 deprecated the extreme preset 
+
 changed r.Shadow.Virtual.ResolutionLodBiasDirectional,moving values from 0,8 to 0.9 in the standard preset, and changed it to 0,9 and 1 in the medium preset
+
 changed r.Shadow.Virtual.Clipmap.LastLevel value from 15 to 16 in the high preset
