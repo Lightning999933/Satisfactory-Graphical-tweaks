@@ -1,0 +1,13 @@
+the presets here inprove lumens GI and reflections quality and some other things
+ the higher preset you choose the lower your performance will get, lumen will become less noisy with less obvious artifacts, and grass density will increase
+  (to avoid confusion, quality scales like this: vanilla < low < recommended < medium < high < perfectionist)
+ your performance (fps) will also impact the quality of lumen (further explained in the research files)
+
+how to install:
+1st pick a preset of your choosing (the recommended preset is well, recommended)
+2nd insert the engine.ini file into %localAppdata%\FactoryGame\saved\config\Windows and overwrite the vanilla file with the same name (dont worry this wont mess anything up)
+3rd launch the game and enable global illumination in the menu (recommended at high) and you are done !
+
+additionally:
+to get the best quality: use an upscaler preferably whichever one fits your GPU brand (unless you have a GTX GPU in which case its up to you) or use TSR (which isn't branded)
+and set them to the highest modes you can afford performance wise, why ? because they are higher quality than the games default AA method (TAA)

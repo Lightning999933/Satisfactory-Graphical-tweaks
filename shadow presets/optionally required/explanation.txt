@@ -1,0 +1,2 @@
+the engine.ini file here is only necessarry if you arent using one of the lumen presets
+ as certain CVAR's/commands required for VSM's to work properly is present in the engine.ini, and those CVAR's/commands can not be moved to the scalability.INI

@@ -1,0 +1,117 @@
+beginning notes: 
+if you try to enter the commands in here through the console they will not work
+you have to remove the “ = “ between the value and command for it to work
+Note that: the quality of lumen lighting also depends on your fps
+ the higher your fps, the less likely you are to see ghosting/smear/blur/noise when using lumen
+  due to the fact that lumen uses past frames to denoise it self 
+   the bigger the difference between frames the more noisy/blurry it becomes
+(and a lower framerate also means a bigger difference between frames)
+use the imgsli links as an easy way to see for yourself what each tweak does
+key :
+perf = performance
+IQ = image quality
+inc = increase
+An asterisk after a performance claim = it may vary based on location and time of day
+these are .INI edits aimed at improving graphics
+r.Lumen.ScreenProbeGather.Temporal.MaxFramesAccumulated
+;this command controls how many frames lumen can use to denoise itself, the higher the value the less noise/boiling will be noticeable on Lumen GI however higher values also increase the smeariness/blurriness of it I recommend a value between 20 and 40, the game has it set to 10 by default,
+ the effects of this command can not be properly showcased by imgsli
+r.Lumen.Reflections.Temporal.MaxFramesAccumulated 
+(default 32) this command does the same as the previous one but for lumen reflections instead, the game has it set to 32 by default, 
+the effects of this command can not be properly showcased by imgsli
+r.Lumen.Reflections.SmoothBias
+(default: 0) this command effects how diffuse lumen reflections are, the higher the value the less diffuse reflections will be, the less diffuse reflections are, them ore noisy they get, the game has it at 0 by default 
+Imgsli link:
+r.AOGlobalDistanceField.MinMeshSDFRadius
+Controls the minimum size of mesh’s to be included in lumen lighting
+imgsli link: https://imgsli.com/NDE4MzA2
+r.Lumen.Reflections.AsyncCompute=1 
+(default: 0) with 1 the game uses and asynchronous path for lumen reflections which in theory improves CPU performance, no effect on IQ
+r.Lumen.AsyncCompute=1 
+(default: 0) with 1 the game uses and asynchronous path for lumen reflections which in theory improves CPU performance, no effect on IQ
+r.LumenScene.SurfaceCache.CardTexelDensityScale
+(default: 100) can effect the render distance of lumen GI, my tweaks have it set to 500 as its the best balance for this game, too high a value will reduce draw distance, too low will do the same
+imgsli link: https://imgsli.com/MzY0MjE5
+r.Lumen.TranslucencyReflections.FrontLayer.Enable
+(default: 0) improves the IQ of reflections on transparent surfaces when set to 1, the game has it set to 0 by default, 
+imgsli link: 
+r.FidelityFX.FSR3.UseSSRExperimentalDenoiser
+(default: 0) When enabled this fixes screenspace reflections when using FSR as AA/upscaling the game has this set to false by default for some reason, 
+imgsli link: https://imgsli.com/Mzc0MTkz/0/2
+r.DontLimitOnBattery=1
+(default: 0) could be usefull for players on mobile devices (handhelds and the laptops)
+
+r.DFShadow.TwoSidedMeshDistanceBiasScale
+(default: 2) changes the behavior of DF shadows, some might prefer different values for it, including the default value of 2, doesn’t effect VSM’s
+imgsli link: https://imgsli.com/MzYyMzI4/0/2
+r.TemporalAASamples
+(default: 8) With FSR enabled this when set to 2 will stop most of of the flickering in the distance however it will also ruin AA quality for things close to the camera, only use this if you play with the ‘FSR’ upscaler
+the effects of this command can not be properly showcased by imgsli
+r.Lumen.ScreenProbeGather.DiffuseIntegralMethod
+(default: 0) 0, 1 and 2 are the only valid values, 1 (importance sample BRDF) creates a paint drying effect that looks disgusting, 2 (numerical integral refrence) is similar to default, however it performs worse and has more temporal artifacts its used by default on DX 11 but theres no point to really change this from 0 (spherical harmonics) 
+imgsli link: 
+r.Lumen.ScreenProbeGather.DownsampleFactor
+(default: 16) effects the noisy-ness of lumen ambient occlusion, lower the value the better the quality and the worse the performance gets,
+imgsli link: https://imgsli.com/MzYzMDk1/0/3
+r.Lumen.ScreenProbeGather.TracingOctahedronResolution
+(default: 8) affects the resolution of lumen rendering, this is most noticeable in areas that weren't visible in previous frames and in other areas it reduces the reliance on accumulating frames for denoising, 
+imgsli link: https://imgsli.com/MzY0MjAz
+r.Shadow.Virtual.ForceOnlyVirtualShadowMaps=1
+(Default: 0)forces the game to use VSM’s exclusively, when enabled it drastically increases the draw distance of high quality shadows and it improves performance, default value is 0 and depending on the preset used its either 1 or 0 
+r.Shadow.RadiusThreshold=0.1-0.07
+(default: 0.01) this is needed to cull tiny shadows that would otherwise destroy performance (only effects VSM's) default value is 0,01, doesn't have a large effect on IQ so no imgsli link here
+r.Shadow.Virtual.Enable
+enables or disables VSM's, enabling VSMs drastically increases shadow quality and draw distance when coupled with the other 4 commands listed here, however it comes with a massive performance cost (20%+*) 
+imgsli link: https://imgsli.com/Mzk0NDA2 (imgsli link is outdated)
+r.Shadow.Virtual.Clipmap.LastLevel
+(default: 22) lower values decrease range but increase the performance of VSM shadows, the game has it set to 22 
+imgsli link: https://imgsli.com/Mzc0MTUy/2/1
+r.Shadow.Virtual.SMRT.RayCountDirectional
+(default: 0) 0 disables SMRT directional which makes shadows incredibly sharp and unrealistic
+recommended values are between 8 and 64, above 8 there usually isnt much of a benefit except in low light environments (eg: at night) going above 8 does also come with a small performance cost
+r.Shadow.Virtual.ScreenRayLength=0.000001
+(default: 0.015) reduces SMRT noise in VSM's it doesn't have a significant impact though, doesn't cost performance
+r.Shadow.Virtual.SMRT.RayLengthScaleDirectional
+(default:1.5) reduces SMRT noise in VSM's by a large amount, doesn't cost performance, 
+imgsli link: https://imgsli.com/Mzk3MTQx/7/4
+r.Shadow.Virtual.SMRT.TexelDitherScaleDirectional
+(defult: 4) blurs the edges of VSM’s for more realism without introducing significant amounts of noise, 
+imgsli link: https://imgsli.com/Mzk3MTM3
+r.Shadow.Virtual.Cache=0
+(default:1) disables caching for VSM's which reduces VRAM usage, doesn't seem to cost performance, no effect on IQ
+r.shadow.virtual.ResolutionLodBiasDirectional/moving
+(default:-1.5) Can be used as an LOD to control the quality of VSM’s allowing for changes in quality and performance
+lowering its quality often makes shadows blurrier and less clearly defined, it is recommended to stay below -1.1 since above that the performance can randomly get crippled (70-90% performance loss)
+Lower is better
+Imgsli link:  https://imgsli.com/NDE1NTgz
+r.Lumen.screenProbeGather.RadianceCache.ProbeResolution
+(default: 32) Controls lumens probe resolution, raising this will increase quality (untill you pass 96) at a reasonable cost
+This is VRAM intensive however, if you are experiencing frame drops with this above 32, drop it to 32, should go back to normal (64 should be fine on 10GB+ cards tho) once you’ve dropped the value of this down due to VRAM constrainst I recommend increasing the value of .RadianceCache.SpatialFilterNumPasses to make up for the lost quality
+Imgsli link:https://imgsli.com/NDE2NjUz (tested on a 16GB GPU)
+r.Lumen.screenProbeGather.RadianceCache.SpatialFilterNumPasses
+(default: 3) Controls the number of passes Lumens spatial filter will have, the more passes the better the result, at 24 this will also start bringing more natural lighting to a scene
+Between values 4 and 12 the cost is negligible, above that the cost increses exponentially
+Imgsli link:https://imgsli.com/NDE2NjQ3
+grass.culldistancescale
+(default: 1) Controls grass draw distance, has an exponential increase in cost (from negligible to significant)
+Imgsli link: https://imgsli.com/NDE2NjE4
+grass.DensityScale
+(default: 1) Controls grass density, has an exponential increase in cost (from negligible to significant)
+Imsli link: https://imgsli.com/NDE2NjE0
+r.LumenScene.GlobalSDF.ClipmapExtent/resolution
+(default: 252/2500) A combination of right settings for both of these commands can increase Lumen draw distance
+Imgsli link: https://imgsli.com/NDE2NjM0
+r.Lumen.ScreenProbeGather.RadianceCache.ClipmapWorldExtent
+(default: 2500) The higher this value is the higher quality overall lumen lighting will be, however higher values also increase noise 
+It has a negligible performance cost
+Imgsli link: https://imgsli.com/NDE2NjEz
+r.Lumen.ScreenProbeGather.ShortRangeAO.ApplyDuringIntegration
+(default: 0) Reduces noise in Lumen AO, doesn’t cost performance 
+Causes visible artifacting on all reflective elements in the for of paint drying: https://imgsli.com/NDE4MTQy
+Imgsli link: https://imgsli.com/NDE4MTE0
+r.Lumen.ScreenProbeGather.ShortRangeAO.MaxMultibounceAlbedo
+(default: 0.5) Controls* lumen AO’s darkening effect, doesn’t effect performance
+Imgsli link: https://imgsli.com/NDE4MTE1
+r.Lumen.ScreenProbeGather.ShortRangeAO.ScreenSpace.SlopeCompareToleranceScale
+(default: 0.5) Controls* lumen AO’s darkening effect, doesn’t effect performance
+Imgsli link: https://imgsli.com/NDE4MTMz

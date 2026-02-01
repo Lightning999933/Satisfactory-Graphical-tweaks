@@ -1,0 +1,13 @@
+the presets here are to improve shadows visual quality
+ generally the higher the preset the sharper more defined and more expensive shadows will get
+  (to avoid confusion, quality scales like this: vanilla < low < recommended < medium < high < perfectionist)
+
+how to install:
+if you also use one of the "general" presets then you will have to pick a preset of your choosing and insert the Scalability.ini here %localAppdata%\FactoryGame\saved\config\Windows 
+and overwrite the vanilla files with the same names, if you aren't using one of the "general" presets and merely want this mod to improve shadow quality then you will have to also use the engine.ini file in the "optinally required" 
+folder (and copy it to the same path as the scalability.ini file)
+
+additionally, the ini edits only enable VSM's (the shadow method these tweaks use to increase shadow quality) when you have shadow quality set to ultra in game, so whenever you want more performance (for exchange of visual quality)
+you can just turn down shadows to high, which will use the games vanilla shadows
+to get the best quality: use an upscaler preferably whichever one fits your GPU brand (unless you have a GTX GPU in which case its up to you) or use TSR (which isn't branded)
+and set them to the highest modes you can afford performance wise, why ? because they are higher quality than the games default AA method (TAA)

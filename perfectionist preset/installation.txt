@@ -1,0 +1,9 @@
+this is the highest quality setting for this mod, it will run like garbage, dont expect good performance, this mode is not meant for normal gameplay, only for taking screenshots
+   (to avoid confusion, quality scales like this: vanilla < low < recommended < medium < high < perfectionist)
+
+installation:
+copy the engine.ini and Scalability.ini here %localAppdata%\FactoryGame\saved\config\Windows and overwrite the vanilla files with the same names
+
+additionally:
+to get the best quality: use an upscaler preferably whichever one fits your GPU brand (unless you have a GTX GPU in which case its up to you) or use TSR (which isn't branded)
+and set them to the highest modes you can afford performance wise, why ? because they are higher quality than the games default AA method (TAA)
