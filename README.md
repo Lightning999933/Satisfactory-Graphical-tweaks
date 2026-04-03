@@ -14,6 +14,7 @@ recommended in game settings:
 for the shadow presets to work you must set the in game shadow quality to ultra
 however on the experimental branch you also have to enter the command r.Shadow.Virtual.Enable 1 if you want to enable the tweaks 
 however note that in experimental its not recomended as structure shadows are only drawn like 10 meters from the player, which looks terrible around factories, works fine in forests and such though
+
 i also recommends setting lumen to the high setting in game
 as well as that i also recommend selecting DLSS/FSR as upscaling (FSR for AMD/GTX GPU owners, DLSS for RTX GPU owners)
 you can do whatever you want with the rest of the settings
